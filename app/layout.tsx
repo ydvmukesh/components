@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Ubuntu, Inter } from "next/font/google";
 import "../styles/globals.css";
 
 
 
-const inter = Inter({
-  variable: "--font-inter",
+const ubuntu = Ubuntu({
+  weight: ["400", "700"],
+  variable: "--font-ubuntu",
   subsets: ["latin"],
 });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${ubuntu.variable} antialiased`}
       >
         {children}
       </body>

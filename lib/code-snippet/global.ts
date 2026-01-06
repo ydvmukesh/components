@@ -1,12 +1,11 @@
-@import "tailwindcss";
+export const globalCon = `@import "tailwindcss";
 :root {
     --background: #ffffff;
-    --foreground: #747582;
-    --primary: #FF698D;
-    --primary-foreground: #282C4B;
-    --secondary: #F17216;
-    --secondary-foreground: #F17216;
-    --my-gradient: linear-gradient(135deg, #6366f1, #ec4899);
+    --foreground: #B1B1B1;
+    --primary: #2D60FF;
+    --primary-foreground: #fcfcfc;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #1a1a1a;
 }
 
 @theme inline {
@@ -16,12 +15,7 @@
     --color-primary-foreground: var(--primary-foreground);
     --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
-    --font-ubuntu: var(--font-ubuntu);
-    --my-gradients: var(--my-gradient)
-}
-
-@theme {
-    --breakpoint-2xl: 90rem;
+    --font-inter: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,12 +25,10 @@
     }
 }
 
-@layer base {}
-
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-ubuntu);
+    font-family: var(--font-inter);
 }
 
 
@@ -51,4 +43,4 @@ body {
     /* IE & Edge */
     scrollbar-width: none;
     /* Firefox */
-}
+}`

@@ -1,4 +1,4 @@
-import React from "react"
+export const buttonCode = `import React from "react"
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
 
@@ -23,10 +23,10 @@ interface ButtonProps
 }
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2  text-base font-medium transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:pointer-events-none disabled:opacity-50 active:scale-95 rounded-full"
+  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:pointer-events-none disabled:opacity-50 active:scale-95"
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-gradient-to-r from-[#FF698D]  to-[#FB3F6C] text-white hover:opacity-90 ",
+  primary: "bg-slate-900 text-white hover:bg-slate-800",
   secondary: "bg-slate-100 text-slate-900 hover:bg-slate-200",
   outline:"border border-slate-200 bg-transparent hover:bg-slate-100 text-slate-900",
   ghost: "hover:bg-slate-100 text-slate-600",
@@ -37,7 +37,7 @@ const variantStyles: Record<ButtonVariant, string> = {
 const sizeStyles: Record<ButtonSize, string> = {
   sm: "h-9 px-3",
   md: "h-10 px-4 py-2",
-  lg: "h-11 px-8 text-medium",
+  lg: "h-11 px-8 text-base",
   icon: "h-10 w-10",
 }
 
@@ -62,7 +62,7 @@ if (href) {
   return (
     <Link
       href={href}
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      className={\`\${baseStyles} \${variantStyles[variant]} \${sizeStyles[size]} \${className}\`}
        ref={ref as React.ForwardedRef<HTMLAnchorElement>}
       {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
     >
@@ -77,7 +77,7 @@ if (href) {
       <button
         ref={ref}
         disabled={isLoading || disabled}
-        className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+        className={\`\${baseStyles} \${variantStyles[variant]} \${sizeStyles[size]} \${className}\`}
         {...props}
       >
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
@@ -92,3 +92,5 @@ if (href) {
 Button.displayName = "Button"
 
 export { Button }
+
+`
